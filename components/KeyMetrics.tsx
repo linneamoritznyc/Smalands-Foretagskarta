@@ -41,6 +41,7 @@ interface KeyMetricsProps {
   newCompanies: number;
   totalEmployees: number;
   growthRate: number;
+  companiesPerCapita?: number;
 }
 
 export default function KeyMetrics({
@@ -48,9 +49,10 @@ export default function KeyMetrics({
   newCompanies,
   totalEmployees,
   growthRate,
+  companiesPerCapita,
 }: KeyMetricsProps) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
       <MetricCard
         value={totalCompanies}
         label="Totalt antal företag"
@@ -73,6 +75,13 @@ export default function KeyMetrics({
         suffix="%"
         delay={0.3}
       />
+      {companiesPerCapita !== undefined && (
+        <MetricCard
+          value={companiesPerCapita}
+          label="Företag per 1000 inv."
+          delay={0.4}
+        />
+      )}
     </div>
   );
 }

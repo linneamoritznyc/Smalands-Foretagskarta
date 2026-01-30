@@ -68,6 +68,7 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
             newCompanies={data.newCompanies}
             totalEmployees={data.totalEmployees}
             growthRate={data.growthRate}
+            companiesPerCapita={data.companiesPerCapita}
           />
         </div>
       </section>

@@ -1,5 +1,6 @@
 import { getAllKommunerSummary, getCountyTotals } from "@/lib/data";
 import KommunMap from "@/components/KommunMap";
+import JonkopingMap from "@/components/JonkopingMap";
 import { CountyMetrics } from "@/components/KeyMetrics";
 
 export default async function HomePage() {
@@ -49,10 +50,25 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* SVG Map Section - Desktop */}
+      <section className="pb-8 hidden lg:block">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <JonkopingMap kommuner={kommuner} />
+        </div>
+      </section>
+
+      {/* Grid Map Section */}
       <section className="pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <KommunMap kommuner={kommuner} />
+          <div className="lg:hidden mb-4">
+            <h2 className="text-lg font-semibold text-charcoal text-center">Alla kommuner</h2>
+          </div>
+          <div className="lg:mt-8">
+            <h3 className="text-center text-medium-gray mb-6 hidden lg:block">
+              Eller välj kommun från listan nedan
+            </h3>
+            <KommunMap kommuner={kommuner} />
+          </div>
         </div>
       </section>
 
