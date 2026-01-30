@@ -1,0 +1,61 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#F8F9FA"/>
+      <stop offset="100%" stop-color="#E8F4F8"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A8D8EA"/>
+      <stop offset="100%" stop-color="#B8E6D5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="200" fill="#A8D8EA" fill-opacity="0.2"/>
+  <circle cx="1100" cy="530" r="250" fill="#B8E6D5" fill-opacity="0.2"/>
+  <circle cx="900" cy="150" r="150" fill="#D4C5F9" fill-opacity="0.15"/>
+
+  <!-- Logo icon -->
+  <g transform="translate(520, 120)">
+    <rect x="0" y="0" width="160" height="160" rx="32" fill="#A8D8EA" fill-opacity="0.3"/>
+    <path d="M32 128V48L80 24L128 48V128L80 104L32 128Z" fill="#A8D8EA"/>
+    <circle cx="80" cy="64" r="16" fill="white"/>
+  </g>
+
+  <!-- Title -->
+  <text x="600" y="340" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="700" fill="#1F2937">
+    Smålands Företagskarta
+  </text>
+
+  <!-- Tagline -->
+  <text x="600" y="400" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="28" fill="#6B7280">
+    Se företag och tillväxt i din region - i realtid
+  </text>
+
+  <!-- Stats bar -->
+  <rect x="200" y="460" width="800" height="80" rx="16" fill="white" fill-opacity="0.7"/>
+  <rect x="200" y="460" width="800" height="80" rx="16" stroke="#A8D8EA" stroke-width="2"/>
+
+  <!-- Stats -->
+  <text x="340" y="508" text-anchor="middle" font-family="monospace" font-size="32" font-weight="700" fill="#1F2937">35,390</text>
+  <text x="340" y="532" text-anchor="middle" font-family="system-ui" font-size="14" fill="#6B7280">Företag</text>
+
+  <text x="520" y="508" text-anchor="middle" font-family="monospace" font-size="32" font-weight="700" fill="#10B981">+2.4%</text>
+  <text x="520" y="532" text-anchor="middle" font-family="system-ui" font-size="14" fill="#6B7280">Tillväxt</text>
+
+  <text x="700" y="508" text-anchor="middle" font-family="monospace" font-size="32" font-weight="700" fill="#1F2937">13</text>
+  <text x="700" y="532" text-anchor="middle" font-family="system-ui" font-size="14" fill="#6B7280">Kommuner</text>
+
+  <text x="880" y="508" text-anchor="middle" font-family="monospace" font-size="32" font-weight="700" fill="#0284C7">Jönköping</text>
+  <text x="880" y="532" text-anchor="middle" font-family="system-ui" font-size="14" fill="#6B7280">Län</text>
+
+  <!-- Footer -->
+  <text x="600" y="600" text-anchor="middle" font-family="system-ui" font-size="16" fill="#9CA3AF">
+    Regional Business Intelligence Dashboard
+  </text>
+</svg>
