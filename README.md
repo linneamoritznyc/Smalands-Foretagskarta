@@ -107,10 +107,11 @@ Returns detailed data for a specific municipality.
 
 ## Data Sources
 
-- **SCB (Statistiska Centralbyrån)** - Population, employment statistics
+- **SCB (Statistiska Centralbyrån)** - Population, employment statistics, business register
 - **Bolagsverket** - Company registrations, industry classifications (SNI codes)
+- **Tillväxtverket** - Regional development statistics and analysis
 
-Data is updated monthly. Current data represents estimates based on 2024 statistics.
+Data is updated monthly. Current data represents estimates based on January 2026 statistics.
 
 ## Design Principles
 

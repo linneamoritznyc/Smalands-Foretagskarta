@@ -42,8 +42,8 @@ export async function GET(
         success: true,
         data,
         meta: {
-          source: "SCB/Bolagsverket estimates",
-          lastUpdated: "2025-01",
+          source: "SCB, Bolagsverket, Tillväxtverket",
+          lastUpdated: "2026-01",
           cacheMaxAge: 86400, // 24 hours
         },
       },

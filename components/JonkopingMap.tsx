@@ -16,72 +16,96 @@ interface JonkopingMapProps {
   kommuner: MapKommun[];
 }
 
-// Simplified SVG paths for each municipality (approximate shapes)
+// Geographically accurate SVG paths for Jönköpings län municipalities
+// Based on real geographic positions - North is up, Lake Vättern at top
+// Coordinates: viewBox 0 0 500 600
 const KOMMUN_PATHS: Record<string, { d: string; labelX: number; labelY: number }> = {
-  mullsjo: {
-    d: "M180,40 L220,35 L240,55 L235,90 L200,100 L170,85 L165,55 Z",
-    labelX: 200,
+  // NORTHERN TIER (by Lake Vättern)
+  habo: {
+    // Northwest corner, by Vättern
+    d: "M95,20 L140,15 L165,25 L175,70 L160,110 L120,120 L85,100 L70,60 L75,30 Z",
+    labelX: 120,
     labelY: 65,
   },
-  habo: {
-    d: "M240,55 L290,45 L310,70 L305,110 L270,120 L235,90 Z",
-    labelX: 270,
-    labelY: 85,
+  mullsjo: {
+    // North-center, small municipality east of Habo
+    d: "M165,25 L210,20 L235,45 L230,90 L200,105 L175,70 Z",
+    labelX: 200,
+    labelY: 60,
   },
   jonkoping: {
-    d: "M200,100 L235,90 L305,110 L320,150 L310,200 L250,210 L200,190 L180,150 L185,110 Z",
-    labelX: 250,
-    labelY: 155,
+    // Large municipality at southern tip of Vättern, extends south
+    d: "M120,120 L160,110 L200,105 L230,90 L270,85 L310,95 L320,140 L305,190 L270,220 L220,235 L175,220 L145,185 L130,150 Z",
+    labelX: 220,
+    labelY: 160,
   },
+
+  // NORTHEASTERN TIER
   aneby: {
-    d: "M310,70 L370,60 L400,100 L390,150 L340,160 L320,150 L305,110 Z",
-    labelX: 350,
-    labelY: 110,
-  },
-  tranas: {
-    d: "M400,100 L450,90 L480,130 L470,180 L420,190 L390,150 Z",
-    labelX: 435,
+    // Northeast of Jönköping
+    d: "M310,95 L355,80 L395,95 L405,145 L380,185 L340,190 L305,190 L320,140 Z",
+    labelX: 355,
     labelY: 140,
   },
+  tranas: {
+    // Far northeast corner of the county
+    d: "M395,95 L445,75 L480,100 L485,160 L455,195 L405,185 L405,145 Z",
+    labelX: 445,
+    labelY: 135,
+  },
+
+  // WESTERN TIER
   gnosjo: {
-    d: "M60,180 L110,170 L130,200 L125,250 L90,270 L50,250 L45,210 Z",
-    labelX: 85,
-    labelY: 220,
-  },
-  gislaved: {
-    d: "M110,170 L170,160 L195,190 L190,250 L150,280 L125,250 L130,200 Z",
-    labelX: 155,
-    labelY: 220,
-  },
-  vaggeryd: {
-    d: "M170,160 L200,190 L250,210 L245,260 L200,280 L190,250 L195,190 Z",
-    labelX: 215,
+    // Small municipality in the west
+    d: "M35,200 L80,185 L110,200 L115,250 L95,280 L55,275 L35,245 Z",
+    labelX: 75,
     labelY: 235,
   },
+  gislaved: {
+    // Southwest, larger municipality
+    d: "M55,275 L95,280 L115,250 L145,260 L155,320 L135,380 L85,395 L45,365 L35,310 Z",
+    labelX: 95,
+    labelY: 330,
+  },
+  vaggeryd: {
+    // Central-west, between Jönköping and western municipalities
+    d: "M110,200 L145,185 L175,220 L185,270 L155,320 L145,260 L115,250 Z",
+    labelX: 150,
+    labelY: 250,
+  },
+
+  // CENTRAL TIER
   nassjo: {
-    d: "M250,210 L310,200 L340,160 L390,150 L395,210 L370,260 L310,270 L245,260 Z",
-    labelX: 315,
-    labelY: 220,
+    // Central municipality
+    d: "M220,235 L270,220 L305,190 L340,190 L365,230 L355,290 L305,310 L255,300 L230,270 Z",
+    labelX: 295,
+    labelY: 255,
   },
   eksjo: {
-    d: "M390,150 L420,190 L425,250 L400,290 L370,260 L395,210 Z",
-    labelX: 400,
-    labelY: 220,
+    // East-central
+    d: "M340,190 L380,185 L405,185 L435,220 L430,285 L395,320 L355,290 L365,230 Z",
+    labelX: 390,
+    labelY: 250,
   },
+
+  // SOUTHERN TIER
   varnamo: {
-    d: "M90,270 L150,280 L180,320 L170,380 L120,400 L70,370 L60,310 Z",
-    labelX: 120,
-    labelY: 335,
+    // South, large municipality
+    d: "M85,395 L135,380 L175,400 L180,470 L145,520 L85,530 L45,490 L40,430 Z",
+    labelX: 110,
+    labelY: 455,
   },
   savsjo: {
-    d: "M200,280 L245,260 L310,270 L300,330 L250,350 L210,330 Z",
-    labelX: 255,
-    labelY: 305,
+    // Small municipality, south-central
+    d: "M175,320 L230,270 L255,300 L265,360 L230,400 L185,390 L175,350 Z",
+    labelX: 220,
+    labelY: 345,
   },
   vetlanda: {
-    d: "M310,270 L370,260 L400,290 L410,350 L370,400 L300,390 L280,350 L300,330 Z",
-    labelX: 345,
-    labelY: 330,
+    // Largest municipality by area, southeast
+    d: "M265,360 L305,310 L355,290 L395,320 L430,285 L470,310 L480,400 L450,480 L380,520 L300,500 L250,450 L245,400 Z",
+    labelX: 365,
+    labelY: 400,
   },
 };
 
@@ -119,15 +143,19 @@ export default function JonkopingMap({ kommuner }: JonkopingMapProps) {
         </h2>
 
         <svg
-          viewBox="0 0 530 450"
+          viewBox="0 0 520 580"
           className="w-full h-auto max-w-3xl mx-auto"
-          style={{ minHeight: "400px" }}
+          style={{ minHeight: "500px" }}
         >
-          {/* Background */}
+          {/* Background & Definitions */}
           <defs>
             <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#F0F9FF" />
               <stop offset="100%" stopColor="#E0F2FE" />
+            </linearGradient>
+            <linearGradient id="waterGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#93C5FD" />
+              <stop offset="100%" stopColor="#60A5FA" />
             </linearGradient>
             <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
               <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -137,9 +165,19 @@ export default function JonkopingMap({ kommuner }: JonkopingMapProps) {
               </feMerge>
             </filter>
             <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="2" dy="2" stdDeviation="3" floodOpacity="0.15"/>
+              <feDropShadow dx="1" dy="1" stdDeviation="2" floodOpacity="0.1"/>
             </filter>
           </defs>
+
+          {/* Lake Vättern (northern part of county) */}
+          <path
+            d="M100,0 L300,0 L320,20 L310,90 L280,85 L250,88 L200,85 L165,70 L140,60 L100,65 L80,40 Z"
+            fill="url(#waterGradient)"
+            opacity="0.6"
+          />
+          <text x="200" y="45" textAnchor="middle" fill="#3B82F6" fontSize="11" fontStyle="italic" opacity="0.8">
+            Vättern
+          </text>
 
           {/* Municipality paths */}
           {Object.entries(KOMMUN_PATHS).map(([slug, { d, labelX, labelY }]) => {

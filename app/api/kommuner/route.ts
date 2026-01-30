@@ -20,8 +20,8 @@ export async function GET() {
           },
         },
         meta: {
-          source: "SCB/Bolagsverket estimates",
-          lastUpdated: "2025-01",
+          source: "SCB, Bolagsverket, Tillväxtverket",
+          lastUpdated: "2026-01",
           totalMunicipalities: kommuner.length,
         },
       },

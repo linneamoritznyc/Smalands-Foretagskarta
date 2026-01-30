@@ -46,6 +46,16 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-medium-gray">
               <li>
                 <a
+                  href="https://www.scb.se"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-sky-light transition-colors"
+                >
+                  SCB (Statistiska Centralbyrån)
+                </a>
+              </li>
+              <li>
+                <a
                   href="https://www.bolagsverket.se"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -56,16 +66,16 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://www.scb.se"
+                  href="https://tillvaxtverket.se"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-sky-light transition-colors"
                 >
-                  SCB (Statistiska Centralbyrån)
+                  Tillväxtverket
                 </a>
               </li>
               <li className="text-light-gray">
-                Uppdaterad månatligen
+                Uppdaterad januari 2026
               </li>
             </ul>
           </div>

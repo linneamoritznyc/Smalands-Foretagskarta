@@ -120,8 +120,8 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="glass-card-static p-6 text-center">
             <p className="text-medium-gray text-sm">
-              Data baserad på uppskattningar från SCB och Bolagsverket.
-              Senast uppdaterad: Januari 2025
+              Data baserad på SCB, Bolagsverket och Tillväxtverket.
+              Senast uppdaterad: Januari 2026
             </p>
           </div>
         </div>
