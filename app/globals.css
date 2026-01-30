@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Y2K Nano-Futuristic / CD Aesthetic - Light Mode Only */
+
+:root {
+  /* Primary Colors */
+  --sky-blue: #A8D8EA;
+  --silver: #C0C0C0;
+  --white: #FFFFFF;
+
+  /* Accent Colors */
+  --mint: #B8E6D5;
+  --lavender: #D4C5F9;
+  --peach: #FFD4B8;
+  --rose: #FFB3C1;
+  --soft-yellow: #FFF3B8;
+
+  /* Text Colors */
+  --charcoal: #1F2937;
+  --medium-gray: #6B7280;
+  --light-gray: #9CA3AF;
+
+  /* Status Colors */
+  --positive: #10B981;
+  --negative: #EF4444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FA 50%, #E8F4F8 100%);
+  min-height: 100vh;
+  color: var(--charcoal);
+}
+
+/* Glassmorphism Card */
+@layer components {
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-lg rounded-2xl border border-sky-light/30;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    transition: all 300ms ease;
+  }
+
+  .glass-card:hover {
+    @apply border-sky-light/50;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Static glass card without hover effects */
+  .glass-card-static {
+    @apply bg-white/70 backdrop-blur-lg rounded-2xl border border-sky-light/30;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Primary Button */
+  .btn-primary {
+    @apply px-6 py-3 rounded-xl font-semibold text-charcoal;
+    background: linear-gradient(135deg, #A8D8EA 0%, #B8E6D5 100%);
+    box-shadow: 0 4px 12px rgba(168, 216, 234, 0.3);
+    transition: all 200ms ease;
+  }
+
+  .btn-primary:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(168, 216, 234, 0.4);
+  }
+
+  .btn-primary:active {
+    transform: scale(0.98);
+  }
+
+  /* Secondary Button */
+  .btn-secondary {
+    @apply px-6 py-3 rounded-xl font-semibold text-charcoal bg-white border-2 border-sky-light;
+    transition: all 200ms ease;
+  }
+
+  .btn-secondary:hover {
+    @apply bg-sky-light/10;
+  }
+
+  /* Metric Card */
+  .metric-card {
+    @apply glass-card p-6 text-center min-h-[140px] flex flex-col justify-center;
+  }
+
+  .metric-value {
+    @apply text-4xl md:text-5xl font-bold font-mono text-charcoal;
+  }
+
+  .metric-label {
+    @apply text-sm text-medium-gray mt-2;
+  }
+
+  .metric-change {
+    @apply text-sm font-medium mt-1;
+  }
+
+  .metric-change.positive {
+    @apply text-emerald-500;
+  }
+
+  .metric-change.negative {
+    @apply text-red-500;
+  }
+
+  /* Kommune Map Item */
+  .kommun-card {
+    @apply glass-card p-4 cursor-pointer;
+  }
+
+  .kommun-card:hover {
+    @apply border-sky-light;
+    box-shadow: 0 12px 48px rgba(168, 216, 234, 0.2);
+  }
+
+  /* Table Styles */
+  .data-table {
+    @apply w-full;
+  }
+
+  .data-table thead {
+    background: linear-gradient(to bottom, #F8F9FA, #E8F4F8);
+  }
+
+  .data-table th {
+    @apply px-4 py-3 text-left font-semibold text-charcoal border-b-2 border-sky-light;
+  }
+
+  .data-table td {
+    @apply px-4 py-3 border-b border-gray-200;
+  }
+
+  .data-table tbody tr:hover {
+    @apply bg-sky-light/5;
+  }
+
+  /* Header */
+  .header-sticky {
+    @apply sticky top-0 z-50;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Footer */
+  .footer {
+    background: linear-gradient(to top, #E8F4F8, #F8F9FA);
+    @apply border-t border-sky-light py-12;
+  }
+
+  /* Chart Container */
+  .chart-container {
+    @apply glass-card-static p-6;
+  }
+
+  /* Skeleton Loading */
+  .skeleton {
+    @apply animate-pulse bg-gray-200 rounded-lg;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F9FA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sky-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8BC8DC;
+}
+
+/* Focus States for Accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--sky-blue);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Number/Stats Font */
+.font-stat {
+  font-family: 'SF Mono', 'Roboto Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
