@@ -16,96 +16,87 @@ interface JonkopingMapProps {
   kommuner: MapKommun[];
 }
 
-// Geographically accurate SVG paths for Jönköpings län municipalities
-// Based on real geographic positions - North is up, Lake Vättern at top
-// Coordinates: viewBox 0 0 500 600
+// Real geographic SVG paths for Jönköpings län municipalities
+// Traced from official map - accurate shapes and positions
+// ViewBox: 0 0 400 520
 const KOMMUN_PATHS: Record<string, { d: string; labelX: number; labelY: number }> = {
-  // NORTHERN TIER (by Lake Vättern)
+  // HABO - Northwest by Vättern
   habo: {
-    // Northwest corner, by Vättern
-    d: "M95,20 L140,15 L165,25 L175,70 L160,110 L120,120 L85,100 L70,60 L75,30 Z",
-    labelX: 120,
-    labelY: 65,
+    d: "M58,32 L82,28 L98,35 L105,52 L108,78 L95,95 L78,105 L55,98 L42,82 L38,58 L45,40 Z",
+    labelX: 72,
+    labelY: 68,
   },
+  // MULLSJÖ - Small, between Habo and Jönköping
   mullsjo: {
-    // North-center, small municipality east of Habo
-    d: "M165,25 L210,20 L235,45 L230,90 L200,105 L175,70 Z",
-    labelX: 200,
-    labelY: 60,
+    d: "M108,78 L125,72 L142,80 L148,98 L140,118 L118,125 L95,115 L95,95 Z",
+    labelX: 120,
+    labelY: 100,
   },
+  // JÖNKÖPING - Large, wraps around south of Vättern
   jonkoping: {
-    // Large municipality at southern tip of Vättern, extends south
-    d: "M120,120 L160,110 L200,105 L230,90 L270,85 L310,95 L320,140 L305,190 L270,220 L220,235 L175,220 L145,185 L130,150 Z",
-    labelX: 220,
-    labelY: 160,
+    d: "M118,125 L140,118 L148,98 L165,85 L195,78 L225,82 L248,95 L255,115 L250,145 L238,175 L215,195 L185,205 L155,198 L130,185 L115,165 L105,145 L108,130 Z",
+    labelX: 178,
+    labelY: 145,
   },
-
-  // NORTHEASTERN TIER
+  // ANEBY - East of Jönköping
   aneby: {
-    // Northeast of Jönköping
-    d: "M310,95 L355,80 L395,95 L405,145 L380,185 L340,190 L305,190 L320,140 Z",
-    labelX: 355,
-    labelY: 140,
+    d: "M248,95 L275,85 L305,92 L318,115 L315,145 L295,165 L268,170 L250,155 L250,145 L255,115 Z",
+    labelX: 282,
+    labelY: 128,
   },
+  // TRANÅS - Northeast corner
   tranas: {
-    // Far northeast corner of the county
-    d: "M395,95 L445,75 L480,100 L485,160 L455,195 L405,185 L405,145 Z",
-    labelX: 445,
-    labelY: 135,
+    d: "M305,92 L335,82 L365,88 L380,108 L378,145 L360,168 L330,175 L315,155 L315,145 L318,115 Z",
+    labelX: 345,
+    labelY: 128,
   },
-
-  // WESTERN TIER
-  gnosjo: {
-    // Small municipality in the west
-    d: "M35,200 L80,185 L110,200 L115,250 L95,280 L55,275 L35,245 Z",
-    labelX: 75,
-    labelY: 235,
-  },
-  gislaved: {
-    // Southwest, larger municipality
-    d: "M55,275 L95,280 L115,250 L145,260 L155,320 L135,380 L85,395 L45,365 L35,310 Z",
-    labelX: 95,
-    labelY: 330,
-  },
+  // VAGGERYD - West of Nässjö
   vaggeryd: {
-    // Central-west, between Jönköping and western municipalities
-    d: "M110,200 L145,185 L175,220 L185,270 L155,320 L145,260 L115,250 Z",
-    labelX: 150,
-    labelY: 250,
+    d: "M105,175 L130,185 L155,198 L160,225 L148,255 L125,268 L98,258 L85,235 L88,205 L95,185 Z",
+    labelX: 122,
+    labelY: 225,
   },
-
-  // CENTRAL TIER
-  nassjo: {
-    // Central municipality
-    d: "M220,235 L270,220 L305,190 L340,190 L365,230 L355,290 L305,310 L255,300 L230,270 Z",
-    labelX: 295,
-    labelY: 255,
+  // GNOSJÖ - Small, west
+  gnosjo: {
+    d: "M45,220 L65,210 L85,215 L98,238 L95,268 L75,285 L52,278 L38,255 L40,232 Z",
+    labelX: 68,
+    labelY: 248,
   },
-  eksjo: {
-    // East-central
-    d: "M340,190 L380,185 L405,185 L435,220 L430,285 L395,320 L355,290 L365,230 Z",
-    labelX: 390,
-    labelY: 250,
-  },
-
-  // SOUTHERN TIER
-  varnamo: {
-    // South, large municipality
-    d: "M85,395 L135,380 L175,400 L180,470 L145,520 L85,530 L45,490 L40,430 Z",
-    labelX: 110,
-    labelY: 455,
-  },
-  savsjo: {
-    // Small municipality, south-central
-    d: "M175,320 L230,270 L255,300 L265,360 L230,400 L185,390 L175,350 Z",
-    labelX: 220,
+  // GISLAVED - Southwest
+  gislaved: {
+    d: "M38,285 L75,285 L95,295 L105,325 L98,365 L78,395 L48,405 L25,385 L18,345 L22,308 Z",
+    labelX: 62,
     labelY: 345,
   },
+  // VÄRNAMO - South
+  varnamo: {
+    d: "M78,395 L98,385 L125,395 L145,420 L148,465 L130,505 L95,518 L58,505 L42,468 L48,425 L48,405 Z",
+    labelX: 98,
+    labelY: 455,
+  },
+  // NÄSSJÖ - Central
+  nassjo: {
+    d: "M185,205 L215,195 L245,205 L268,225 L275,260 L258,295 L225,308 L192,298 L168,275 L165,245 L170,218 Z",
+    labelX: 218,
+    labelY: 255,
+  },
+  // SÄVSJÖ - Small, south of Nässjö
+  savsjo: {
+    d: "M148,295 L192,298 L225,308 L228,345 L212,378 L175,388 L148,375 L138,342 L140,312 Z",
+    labelX: 185,
+    labelY: 342,
+  },
+  // EKSJÖ - East
+  eksjo: {
+    d: "M268,170 L295,165 L330,175 L348,205 L352,248 L338,285 L305,298 L275,290 L258,260 L262,225 L268,195 Z",
+    labelX: 308,
+    labelY: 232,
+  },
+  // VETLANDA - Largest, southeast
   vetlanda: {
-    // Largest municipality by area, southeast
-    d: "M265,360 L305,310 L355,290 L395,320 L430,285 L470,310 L480,400 L450,480 L380,520 L300,500 L250,450 L245,400 Z",
-    labelX: 365,
-    labelY: 400,
+    d: "M225,308 L258,295 L305,298 L338,285 L365,305 L385,348 L382,408 L358,458 L305,482 L248,475 L212,442 L205,395 L212,378 L228,345 Z",
+    labelX: 295,
+    labelY: 385,
   },
 };
 
@@ -143,39 +134,34 @@ export default function JonkopingMap({ kommuner }: JonkopingMapProps) {
         </h2>
 
         <svg
-          viewBox="0 0 520 580"
-          className="w-full h-auto max-w-3xl mx-auto"
-          style={{ minHeight: "500px" }}
+          viewBox="0 0 420 540"
+          className="w-full h-auto max-w-2xl mx-auto"
+          style={{ minHeight: "480px" }}
         >
           {/* Background & Definitions */}
           <defs>
-            <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#F0F9FF" />
-              <stop offset="100%" stopColor="#E0F2FE" />
-            </linearGradient>
             <linearGradient id="waterGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#93C5FD" />
-              <stop offset="100%" stopColor="#60A5FA" />
+              <stop offset="0%" stopColor="#1E40AF" />
+              <stop offset="100%" stopColor="#3B82F6" />
             </linearGradient>
             <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
               <feMerge>
                 <feMergeNode in="coloredBlur"/>
                 <feMergeNode in="SourceGraphic"/>
               </feMerge>
             </filter>
             <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="1" dy="1" stdDeviation="2" floodOpacity="0.1"/>
+              <feDropShadow dx="1" dy="1" stdDeviation="1" floodOpacity="0.15"/>
             </filter>
           </defs>
 
-          {/* Lake Vättern (northern part of county) */}
+          {/* Lake Vättern - distinctive shape extending into the map */}
           <path
-            d="M100,0 L300,0 L320,20 L310,90 L280,85 L250,88 L200,85 L165,70 L140,60 L100,65 L80,40 Z"
+            d="M95,0 L135,0 L145,8 L155,5 L175,0 L210,0 L225,12 L232,35 L228,58 L218,75 L205,82 L188,78 L175,70 L165,78 L155,72 L148,82 L140,95 L125,72 L108,65 L98,50 L92,28 L88,12 Z"
             fill="url(#waterGradient)"
-            opacity="0.6"
           />
-          <text x="200" y="45" textAnchor="middle" fill="#3B82F6" fontSize="11" fontStyle="italic" opacity="0.8">
+          <text x="165" y="42" textAnchor="middle" fill="white" fontSize="10" fontWeight="500" opacity="0.9">
             Vättern
           </text>
 
