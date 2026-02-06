@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   description: "Se företag och tillväxt i din region - i realtid. Interaktiv dashboard för Jönköpings län med 35,000+ företag i 13 kommuner.",
   keywords: ["företag", "Småland", "Jönköping", "business intelligence", "regional utveckling", "statistik", "SCB", "Bolagsverket"],
-  authors: [{ name: "Linnea Moritz", url: "https://linneamoritz.com" }],
+  authors: [{ name: "Linnea Moritz", url: "https://personalportfolio-peach-pi.vercel.app/#projects" }],
   creator: "Linnea Moritz",
   metadataBase: new URL("https://smalands-foretagskarta.vercel.app"),
   icons: {

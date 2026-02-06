@@ -147,7 +147,7 @@ Or connect your repository at [vercel.com/new](https://vercel.com/new).
 
 ## Credits
 
-**Built by [Linnea Moritz](https://linneamoritz.com)**
+**Built by [Linnea Moritz](https://personalportfolio-peach-pi.vercel.app/#projects)**
 
 Built with love from HiTech Vetlanda for Science Park and the regional business community of Småland.
 

@@ -88,7 +88,7 @@ export default function Footer() {
             </p>
             <div className="flex flex-col gap-2 text-sm">
               <a
-                href="https://linneamoritz.com"
+                href="https://personalportfolio-peach-pi.vercel.app/#projects"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-medium-gray hover:text-sky-light transition-colors"

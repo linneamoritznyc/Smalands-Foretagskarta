@@ -72,7 +72,7 @@ export default function OmPage() {
               </div>
               <div className="flex gap-3">
                 <span className="text-sky-light font-bold">4.</span>
-                <p><strong className="text-charcoal">Benchmarking</strong> - Låta kommuner jämföra sig med varandra på ett transparent sätt.</p>
+                <p><strong className="text-charcoal">Jämförelse</strong> - Låta kommuner jämföra sig med varandra på ett transparent sätt.</p>
               </div>
             </div>
           </div>
@@ -90,7 +90,7 @@ export default function OmPage() {
               </div>
               <div className="p-4 bg-mint/10 rounded-xl">
                 <h3 className="font-semibold text-charcoal mb-2">Kommuner</h3>
-                <p className="text-sm text-medium-gray">Benchmarka mot grannkommuner och attrahera nya företag.</p>
+                <p className="text-sm text-medium-gray">Jämför med grannkommuner och attrahera nya företag.</p>
               </div>
               <div className="p-4 bg-lavender/10 rounded-xl">
                 <h3 className="font-semibold text-charcoal mb-2">Entreprenörer</h3>
@@ -238,7 +238,7 @@ export default function OmPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://linneamoritz.com"
+                href="https://personalportfolio-peach-pi.vercel.app/#projects"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 border border-sky-light rounded-lg hover:bg-sky-light/10 transition-colors text-charcoal"
