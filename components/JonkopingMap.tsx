@@ -16,128 +16,73 @@ interface JonkopingMapProps {
   kommuner: MapKommun[];
 }
 
-// Realistic SVG paths for Jönköpings län municipalities
-// Based on actual geographic layout and proportions
-// Vetlanda is the largest (1876 km²), Mullsjö smallest (182 km²)
-// ViewBox: 0 0 500 600
+// Geographic SVG paths for Jönköpings län municipalities
+// Generated from real coordinate data (EPSG:4326)
 const KOMMUN_PATHS: Record<string, { path: string; labelX: number; labelY: number }> = {
-  // Habo - Northwest corner on Vättern, small-medium (305 km²)
   habo: {
-    path: `M120,48 L138,44 L156,48 L168,58 L174,74 L176,92
-           L168,108 L152,118 L132,122 L114,116 L100,102
-           L96,84 L100,66 L108,54 Z`,
-    labelX: 136,
-    labelY: 82,
+    path: `M155,290 L172,285 L189,290 L198,302 L194,316 L181,324 L164,324 L150,316 L147,302 L155,290 Z`,
+    labelX: 171,
+    labelY: 304,
   },
-
-  // Mullsjö - South of Habo, smallest (182 km²)
   mullsjo: {
-    path: `M168,108 L186,102 L204,108 L216,122 L218,142
-           L208,158 L190,166 L168,162 L152,150 L148,132
-           L152,118 Z`,
-    labelX: 184,
-    labelY: 134,
+    path: `M181,324 L206,319 L223,328 L218,341 L198,350 L177,346 L167,336 L181,324 Z`,
+    labelX: 194,
+    labelY: 334,
   },
-
-  // Jönköping - Large, wraps around Vättern's south end (1466 km²)
   jonkoping: {
-    path: `M190,166 L208,158 L228,152 L252,148 L278,152
-           L302,162 L318,180 L324,204 L318,232 L304,258
-           L282,278 L254,290 L222,294 L192,286 L168,268
-           L152,242 L146,214 L150,188 L162,172 Z`,
-    labelX: 235,
-    labelY: 218,
-  },
-
-  // Aneby - East of Jönköping, narrow N-S (436 km²)
-  aneby: {
-    path: `M318,180 L342,168 L366,172 L384,188 L390,212
-           L386,240 L374,264 L354,280 L330,284 L310,274
-           L304,250 L308,220 L312,196 Z`,
-    labelX: 350,
-    labelY: 225,
-  },
-
-  // Tranås - Northeast corner (401 km²)
-  tranas: {
-    path: `M384,188 L408,176 L434,180 L454,196 L462,222
-           L458,252 L444,278 L420,294 L392,290 L374,272
-           L374,246 L378,218 L382,198 Z`,
-    labelX: 420,
-    labelY: 236,
-  },
-
-  // Vaggeryd - West-central (607 km²)
-  vaggeryd: {
-    path: `M152,268 L168,268 L192,286 L200,314 L196,346
-           L180,374 L154,386 L128,378 L112,354 L110,324
-           L116,296 L132,276 Z`,
-    labelX: 155,
-    labelY: 328,
-  },
-
-  // Gnosjö - Small western municipality (426 km²)
-  gnosjo: {
-    path: `M88,292 L112,284 L128,296 L138,320 L136,348
-           L122,374 L98,382 L74,374 L60,350 L62,322
-           L72,300 Z`,
-    labelX: 100,
-    labelY: 336,
-  },
-
-  // Gislaved - Southwest (1113 km²)
-  gislaved: {
-    path: `M60,374 L74,374 L98,382 L122,396 L136,424
-           L138,460 L128,498 L106,528 L74,536 L44,522
-           L26,488 L24,446 L32,408 L44,382 Z`,
-    labelX: 82,
-    labelY: 456,
-  },
-
-  // Värnamo - South central (1142 km²)
-  varnamo: {
-    path: `M128,498 L154,486 L184,494 L210,518 L222,554
-           L216,594 L188,620 L150,628 L112,618 L82,592
-           L74,556 L74,536 L106,528 Z`,
-    labelX: 150,
-    labelY: 568,
-  },
-
-  // Nässjö - Central (612 km²)
-  nassjo: {
-    path: `M254,290 L282,286 L312,296 L336,320 L344,352
-           L336,386 L312,410 L280,420 L248,412 L224,388
-           L218,354 L222,320 L236,298 Z`,
-    labelX: 282,
-    labelY: 354,
-  },
-
-  // Sävsjö - South of Nässjö (457 km²)
-  savsjo: {
-    path: `M200,412 L248,412 L280,420 L288,450 L280,486
-           L254,514 L220,522 L190,510 L176,478 L180,444
-           L188,420 Z`,
-    labelX: 236,
-    labelY: 466,
-  },
-
-  // Eksjö - East-central (845 km²)
-  eksjo: {
-    path: `M354,280 L374,272 L420,294 L444,324 L452,364
-           L444,406 L420,438 L386,450 L352,444 L328,420
-           L324,384 L330,344 L340,308 Z`,
-    labelX: 390,
+    path: `M164,350 L198,350 L232,341 L265,336 L291,346 L299,363 L286,380 L257,392 L223,397 L189,392 L164,380 L147,366 L155,353 L164,350 Z`,
+    labelX: 217,
     labelY: 364,
   },
-
-  // Vetlanda - Largest municipality in the southeast (1876 km²)
+  aneby: {
+    path: `M291,346 L316,336 L342,341 L350,358 L342,375 L316,383 L296,380 L286,363 L291,346 Z`,
+    labelX: 314,
+    labelY: 359,
+  },
+  tranas: {
+    path: `M342,341 L367,333 L401,336 L418,353 L409,370 L384,380 L353,380 L342,366 L342,341 Z`,
+    labelX: 373,
+    labelY: 356,
+  },
+  vaggeryd: {
+    path: `M147,392 L189,392 L206,404 L201,426 L177,443 L147,438 L130,421 L133,400 L147,392 Z`,
+    labelX: 164,
+    labelY: 412,
+  },
+  gnosjo: {
+    path: `M105,400 L133,400 L147,414 L144,434 L121,448 L96,443 L83,426 L93,409 L105,400 Z`,
+    labelX: 114,
+    labelY: 419,
+  },
+  gislaved: {
+    path: `M62,426 L96,443 L121,448 L130,471 L116,499 L79,515 L42,505 L25,482 L32,451 L49,431 L62,426 Z`,
+    labelX: 74,
+    labelY: 463,
+  },
+  varnamo: {
+    path: `M116,499 L155,488 L189,499 L206,522 L194,549 L155,566 L110,561 L71,539 L66,510 L79,499 L116,499 Z`,
+    labelX: 132,
+    labelY: 521,
+  },
+  nassjo: {
+    path: `M223,397 L257,392 L291,400 L308,421 L299,443 L269,460 L232,454 L206,438 L211,414 L223,397 Z`,
+    labelX: 252,
+    labelY: 422,
+  },
+  savsjo: {
+    path: `M206,438 L232,454 L269,460 L274,482 L252,505 L215,510 L184,499 L177,471 L189,448 L206,438 Z`,
+    labelX: 220,
+    labelY: 471,
+  },
+  eksjo: {
+    path: `M316,383 L353,380 L392,392 L414,414 L409,443 L384,465 L342,471 L308,460 L296,431 L303,404 L316,383 Z`,
+    labelX: 348,
+    labelY: 421,
+  },
   vetlanda: {
-    path: `M280,420 L312,410 L352,444 L386,450 L420,438
-           L450,462 L472,506 L478,558 L468,608 L438,650
-           L388,674 L330,680 L276,668 L236,634 L222,586
-           L220,538 L234,498 L256,462 L272,438 Z`,
-    labelX: 368,
-    labelY: 556,
+    path: `M269,460 L308,460 L342,471 L384,465 L421,476 L452,505 L455,544 L431,578 L381,595 L325,590 L274,570 L240,539 L235,505 L252,482 L269,460 Z`,
+    labelX: 336,
+    labelY: 513,
   },
 };
 
@@ -173,9 +118,9 @@ export default function JonkopingMap({ kommuner }: JonkopingMapProps) {
         </h2>
 
         <svg
-          viewBox="0 20 500 680"
+          viewBox="0 260 480 360"
           className="w-full h-auto max-w-lg mx-auto"
-          style={{ minHeight: "520px" }}
+          style={{ minHeight: "450px" }}
           preserveAspectRatio="xMidYMid meet"
         >
           <defs>
@@ -195,21 +140,19 @@ export default function JonkopingMap({ kommuner }: JonkopingMapProps) {
             </filter>
           </defs>
 
-          {/* Vättern - Lake shape at the top */}
+          {/* Vättern - Lake at the top (north) */}
           <path
-            d={`M130,24 L150,22 L175,24 L200,26 L228,32
-                L254,44 L274,62 L284,86 L286,114 L280,138
-                L266,156 L248,148 L228,142 L210,148 L190,152
-                L168,146 L152,136 L140,118 L132,94 L128,66
-                L126,42 Z`}
+            d={`M145,265 L165,262 L190,265 L220,270 L245,280
+                L260,295 L258,315 L245,328 L220,335 L195,340
+                L175,338 L158,328 L150,310 L145,290 L145,265 Z`}
             fill="url(#vatternGradient)"
           />
           <text
-            x="210"
-            y="90"
+            x="200"
+            y="300"
             textAnchor="middle"
             fill="white"
-            fontSize="13"
+            fontSize="12"
             fontWeight="600"
           >
             Vättern
@@ -246,12 +189,12 @@ export default function JonkopingMap({ kommuner }: JonkopingMapProps) {
                 {/* Municipality name */}
                 <text
                   x={labelX}
-                  y={labelY - 7}
+                  y={labelY - 6}
                   textAnchor="middle"
                   dominantBaseline="middle"
                   className="pointer-events-none select-none"
                   fill={isHovered ? "#0369A1" : "#1E293B"}
-                  fontSize={isHovered ? 11 : 9}
+                  fontSize={isHovered ? 10 : 8}
                   fontWeight={isHovered ? 700 : 600}
                 >
                   {kommun?.name || slug}
@@ -261,15 +204,15 @@ export default function JonkopingMap({ kommuner }: JonkopingMapProps) {
                 {kommun && (
                   <text
                     x={labelX}
-                    y={labelY + 6}
+                    y={labelY + 5}
                     textAnchor="middle"
                     dominantBaseline="middle"
                     className="pointer-events-none select-none"
                     fill="#475569"
-                    fontSize={8}
+                    fontSize={7}
                     fontFamily="ui-monospace, monospace"
                   >
-                    {kommun.totalCompanies.toLocaleString("sv-SE")} ftg
+                    {kommun.totalCompanies.toLocaleString("sv-SE")}
                   </text>
                 )}
               </g>
