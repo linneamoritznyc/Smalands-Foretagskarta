@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 export default function Header() {
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const isEkonomi = pathname === "/ekonomisk-data";
   const isOm = pathname === "/om";
 
   return (
@@ -57,6 +58,14 @@ export default function Header() {
               Karta
             </Link>
             <Link
+              href="/ekonomisk-data"
+              className={`text-sm font-medium transition-colors hover:text-sky-light ${
+                isEkonomi ? "text-sky-light" : "text-medium-gray"
+              }`}
+            >
+              Ekonomisk Data
+            </Link>
+            <Link
               href="/om"
               className={`text-sm font-medium transition-colors hover:text-sky-light ${
                 isOm ? "text-sky-light" : "text-medium-gray"
@@ -80,7 +89,7 @@ export default function Header() {
       </div>
 
       {/* Breadcrumb for dashboard pages */}
-      {!isHome && !isOm && (
+      {!isHome && !isOm && !isEkonomi && (
         <div className="border-t border-sky-light/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
             <nav className="flex items-center gap-2 text-sm">
