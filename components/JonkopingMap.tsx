@@ -17,61 +17,21 @@ interface JonkopingMapProps {
 }
 
 // Geographic SVG paths for Jönköpings län municipalities
-// Generated from coordinate data (WGS84/EPSG:4326)
-// Bounds: lon 13.20° - 15.70°E, lat 56.12° - 57.96°N
+// Generated from WGS84 coordinate data with detailed boundaries
 const KOMMUN_PATHS: Record<string, { path: string; labelX: number; labelY: number }> = {
-  habo: {
-    path: `M154,232 L164,228 L174,230 L181,235 L187,241 L191,248 L187,254 L181,259 L174,263 L164,261 L158,258 L151,251 L148,245 L151,238 L154,232 Z`,
-    labelX: 168, labelY: 245,
-  },
-  mullsjo: {
-    path: `M174,263 L181,259 L191,261 L200,264 L207,271 L204,277 L197,282 L187,284 L177,281 L171,274 L168,268 L174,263 Z`,
-    labelX: 186, labelY: 271,
-  },
-  jonkoping: {
-    path: `M158,258 L164,261 L174,263 L171,274 L177,281 L187,284 L197,282 L207,281 L220,277 L236,274 L253,277 L269,284 L279,294 L286,304 L282,314 L273,323 L259,330 L243,333 L227,333 L210,330 L194,323 L181,317 L168,307 L158,297 L151,287 L148,277 L145,268 L151,261 L158,258 Z`,
-    labelX: 204, labelY: 295,
-  },
-  aneby: {
-    path: `M279,294 L289,287 L302,284 L318,287 L332,294 L338,304 L335,314 L325,323 L312,327 L299,323 L286,317 L279,307 L279,294 Z`,
-    labelX: 306, labelY: 304,
-  },
-  tranas: {
-    path: `M332,294 L345,287 L361,284 L381,287 L397,294 L404,304 L400,314 L391,323 L374,327 L358,323 L345,317 L335,307 L332,294 Z`,
-    labelX: 366, labelY: 304,
-  },
-  vaggeryd: {
-    path: `M151,287 L158,297 L168,307 L181,317 L194,323 L200,333 L197,343 L187,353 L174,359 L158,363 L141,359 L128,350 L122,336 L125,323 L132,310 L141,297 L151,287 Z`,
-    labelX: 159, labelY: 326,
-  },
-  gnosjo: {
-    path: `M122,336 L128,350 L141,359 L138,369 L128,379 L115,386 L99,389 L82,382 L72,369 L76,356 L86,346 L102,340 L122,336 Z`,
-    labelX: 104, labelY: 361,
-  },
-  gislaved: {
-    path: `M72,369 L82,382 L99,389 L115,386 L128,379 L138,389 L135,402 L125,415 L112,428 L95,438 L76,445 L56,441 L40,432 L27,418 L20,402 L27,386 L40,376 L56,369 L72,369 Z`,
-    labelX: 80, labelY: 406,
-  },
-  varnamo: {
-    path: `M95,438 L112,428 L132,425 L154,428 L174,435 L191,445 L200,458 L197,474 L187,487 L171,497 L148,500 L125,497 L102,487 L82,474 L69,458 L66,441 L76,445 L95,438 Z`,
-    labelX: 136, labelY: 462,
-  },
-  nassjo: {
-    path: `M227,333 L243,333 L259,330 L273,336 L282,346 L286,359 L279,373 L266,382 L250,389 L230,389 L214,382 L200,373 L197,356 L204,343 L217,336 L227,333 Z`,
-    labelX: 241, labelY: 358,
-  },
-  savsjo: {
-    path: `M197,356 L200,373 L214,382 L230,389 L236,402 L230,415 L217,425 L197,428 L177,422 L164,409 L161,392 L168,376 L181,363 L197,356 Z`,
-    labelX: 198, labelY: 395,
-  },
-  eksjo: {
-    path: `M299,323 L312,327 L325,323 L345,317 L364,323 L384,333 L397,346 L400,363 L394,379 L381,392 L361,399 L338,396 L318,389 L302,379 L289,366 L282,350 L282,333 L286,317 L299,323 Z`,
-    labelX: 340, labelY: 355,
-  },
-  vetlanda: {
-    path: `M250,389 L266,382 L279,373 L289,366 L302,379 L318,389 L338,396 L361,399 L381,405 L400,418 L417,435 L427,455 L430,474 L423,494 L410,510 L391,523 L368,530 L341,527 L315,520 L292,507 L273,491 L256,471 L243,451 L233,432 L230,415 L236,402 L250,389 Z`,
-    labelX: 335, labelY: 455,
-  },
+  habo: { path: `M145,222 L149,220 L154,219 L158,220 L163,221 L167,223 L170,226 L173,230 L176,234 L178,237 L177,241 L175,244 L172,246 L168,248 L164,251 L160,251 L155,251 L151,249 L147,247 L144,244 L142,240 L140,236 L140,231 L140,228 L142,224 L145,222 Z`, labelX: 158, labelY: 235 },
+  mullsjo: { path: `M160,251 L164,251 L168,248 L171,249 L175,251 L179,251 L184,253 L187,255 L190,258 L192,262 L192,266 L189,269 L185,271 L181,272 L176,271 L172,269 L168,267 L164,264 L161,260 L159,257 L158,254 L160,251 Z`, labelX: 174, labelY: 259 },
+  jonkoping: { path: `M147,247 L151,249 L155,251 L160,251 L158,254 L159,257 L161,260 L164,264 L168,267 L172,269 L176,271 L181,272 L185,271 L189,270 L194,269 L199,266 L204,264 L210,263 L215,262 L220,263 L225,264 L231,266 L236,269 L241,273 L246,278 L251,282 L254,287 L257,292 L259,298 L258,303 L256,307 L252,311 L247,314 L241,316 L235,318 L228,319 L222,319 L215,318 L208,316 L201,314 L195,311 L188,307 L182,304 L176,299 L171,295 L166,289 L161,284 L157,279 L154,274 L151,269 L148,263 L146,258 L145,253 L145,249 L147,247 Z`, labelX: 200, labelY: 282 },
+  aneby: { path: `M254,287 L257,284 L261,281 L266,278 L271,275 L276,274 L282,273 L288,274 L294,276 L299,279 L304,283 L307,287 L310,292 L310,298 L309,303 L306,307 L301,311 L296,313 L290,315 L284,315 L278,313 L273,311 L269,307 L264,303 L260,298 L257,292 L254,287 Z`, labelX: 282, labelY: 293 },
+  tranas: { path: `M304,283 L307,280 L313,277 L318,275 L324,273 L330,272 L337,273 L344,275 L351,278 L357,281 L362,286 L365,291 L368,296 L368,301 L367,307 L364,311 L360,315 L354,318 L347,319 L340,319 L333,318 L327,315 L322,311 L318,307 L314,301 L311,296 L309,291 L306,287 L304,283 Z`, labelX: 335, labelY: 294 },
+  vaggeryd: { path: `M145,253 L146,258 L148,263 L151,269 L154,274 L157,279 L161,284 L166,289 L171,295 L176,299 L182,304 L186,308 L188,313 L188,319 L186,324 L182,328 L177,332 L171,336 L164,339 L157,340 L149,340 L142,339 L135,336 L129,332 L124,327 L120,321 L118,315 L117,308 L119,301 L122,295 L126,288 L131,281 L137,275 L141,269 L144,263 L145,257 L145,253 Z`, labelX: 151, labelY: 300 },
+  gnosjo: { path: `M120,321 L124,327 L129,332 L135,336 L133,341 L129,345 L124,350 L118,354 L111,357 L104,359 L96,360 L89,359 L82,357 L76,353 L72,348 L69,343 L68,337 L69,331 L73,326 L78,322 L85,318 L93,316 L101,315 L109,316 L116,319 L120,321 Z`, labelX: 101, labelY: 337 },
+  gislaved: { path: `M69,343 L72,348 L76,353 L82,357 L89,359 L96,360 L104,359 L111,357 L118,354 L124,350 L129,348 L132,353 L133,359 L131,365 L128,371 L124,377 L118,383 L111,388 L104,393 L96,398 L87,401 L77,404 L67,406 L58,406 L48,404 L39,401 L31,397 L24,391 L19,384 L16,377 L15,369 L16,362 L20,355 L25,349 L32,345 L40,342 L49,340 L58,340 L66,342 L69,343 Z`, labelX: 75, labelY: 370 },
+  varnamo: { path: `M96,398 L104,393 L111,390 L119,388 L128,387 L137,388 L146,390 L155,394 L163,399 L171,405 L178,412 L183,419 L187,427 L188,436 L187,444 L184,452 L179,460 L172,465 L164,471 L155,474 L145,477 L135,477 L125,476 L115,473 L106,468 L98,462 L90,456 L84,448 L80,440 L77,431 L75,422 L76,413 L78,405 L82,400 L89,398 L96,398 Z`, labelX: 132, labelY: 432 },
+  nassjo: { path: `M208,316 L215,318 L222,319 L228,319 L235,318 L241,316 L246,319 L251,322 L255,327 L258,332 L260,338 L259,344 L257,350 L253,355 L248,360 L242,363 L235,366 L228,368 L220,368 L213,366 L206,363 L200,360 L195,354 L191,348 L189,342 L188,336 L189,329 L193,323 L198,319 L204,317 L208,316 Z`, labelX: 224, labelY: 340 },
+  savsjo: { path: `M188,336 L189,342 L191,348 L195,354 L200,360 L206,363 L213,366 L220,368 L222,374 L222,380 L220,386 L216,392 L211,397 L204,401 L197,404 L189,406 L181,405 L173,402 L166,398 L160,392 L156,385 L153,377 L152,370 L154,363 L157,355 L162,348 L169,343 L176,339 L184,337 L188,336 Z`, labelX: 187, labelY: 373 },
+  eksjo: { path: `M278,313 L284,315 L290,315 L296,313 L301,311 L306,307 L311,307 L318,307 L325,307 L333,310 L341,313 L349,317 L357,323 L362,330 L367,337 L370,345 L371,354 L369,362 L365,369 L360,376 L354,382 L345,386 L336,389 L327,390 L318,389 L310,386 L301,381 L294,375 L287,369 L282,361 L278,353 L276,344 L275,335 L276,326 L277,319 L278,313 Z`, labelX: 322, labelY: 345 },
+  vetlanda: { path: `M235,366 L242,363 L248,360 L253,355 L257,350 L261,353 L269,356 L276,359 L283,363 L291,368 L298,372 L306,376 L313,381 L321,386 L328,390 L336,389 L345,386 L354,382 L360,384 L368,389 L377,395 L384,402 L391,410 L396,419 L401,429 L404,439 L405,450 L404,460 L401,471 L396,480 L389,488 L381,495 L371,500 L361,504 L350,505 L339,505 L327,503 L316,499 L306,494 L296,487 L287,480 L279,471 L272,461 L267,451 L263,439 L261,428 L260,417 L261,406 L263,395 L266,385 L270,377 L246,372 L235,366 Z`, labelX: 328, labelY: 428 },
 };
 
 export default function JonkopingMap({ kommuner }: JonkopingMapProps) {
@@ -106,9 +66,9 @@ export default function JonkopingMap({ kommuner }: JonkopingMapProps) {
         </h2>
 
         <svg
-          viewBox="0 200 450 350"
+          viewBox="0 200 420 320"
           className="w-full h-auto max-w-xl mx-auto"
-          style={{ minHeight: "420px" }}
+          style={{ minHeight: "400px" }}
           preserveAspectRatio="xMidYMid meet"
         >
           <defs>
@@ -117,33 +77,16 @@ export default function JonkopingMap({ kommuner }: JonkopingMapProps) {
               <stop offset="100%" stopColor="#3B82F6" />
             </linearGradient>
             <filter id="kommunShadow" x="-5%" y="-5%" width="110%" height="110%">
-              <feDropShadow dx="0" dy="1" stdDeviation="1" floodOpacity="0.1"/>
-            </filter>
-            <filter id="hoverGlow" x="-10%" y="-10%" width="120%" height="120%">
-              <feGaussianBlur stdDeviation="2" result="blur"/>
-              <feMerge>
-                <feMergeNode in="blur"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
+              <feDropShadow dx="0" dy="1" stdDeviation="1" floodOpacity="0.08"/>
             </filter>
           </defs>
 
-          {/* Vättern - Lake shape (north of the map area) */}
+          {/* Vättern - Lake */}
           <path
-            d={`M140,205 L155,202 L175,204 L195,208 L215,215
-                L232,226 L242,240 L245,255 L240,268 L228,278
-                L210,282 L195,280 L180,275 L168,268 L158,258
-                L151,248 L148,238 L145,225 L140,210 Z`}
+            d={`M132,202 L145,200 L160,202 L178,206 L195,212 L210,222 L220,235 L224,248 L222,260 L214,270 L200,276 L185,278 L172,276 L160,272 L152,265 L147,256 L144,245 L140,232 L136,218 L132,202 Z`}
             fill="url(#vatternGradient)"
           />
-          <text
-            x="195"
-            y="242"
-            textAnchor="middle"
-            fill="white"
-            fontSize="11"
-            fontWeight="600"
-          >
+          <text x="178" y="240" textAnchor="middle" fill="white" fontSize="10" fontWeight="600">
             Vättern
           </text>
 
@@ -158,47 +101,37 @@ export default function JonkopingMap({ kommuner }: JonkopingMapProps) {
                   d={path}
                   fill={getKommunColor(slug)}
                   stroke={isHovered ? "#0369A1" : "#475569"}
-                  strokeWidth={isHovered ? 2 : 0.75}
+                  strokeWidth={isHovered ? 1.5 : 0.5}
                   strokeLinejoin="round"
                   className="cursor-pointer"
                   onClick={() => handleClick(slug)}
                   onMouseEnter={() => setHoveredKommun(slug)}
                   onMouseLeave={() => setHoveredKommun(null)}
-                  filter={isHovered ? "url(#hoverGlow)" : "url(#kommunShadow)"}
+                  filter="url(#kommunShadow)"
                   initial={false}
-                  animate={{
-                    scale: isHovered ? 1.02 : 1,
-                  }}
-                  transition={{ duration: 0.12, ease: "easeOut" }}
-                  style={{
-                    transformOrigin: `${labelX}px ${labelY}px`,
-                  }}
+                  animate={{ scale: isHovered ? 1.015 : 1 }}
+                  transition={{ duration: 0.1 }}
+                  style={{ transformOrigin: `${labelX}px ${labelY}px` }}
                 />
-
-                {/* Municipality name */}
                 <text
                   x={labelX}
-                  y={labelY - 5}
+                  y={labelY - 4}
                   textAnchor="middle"
-                  dominantBaseline="middle"
                   className="pointer-events-none select-none"
                   fill={isHovered ? "#0369A1" : "#1E293B"}
-                  fontSize={isHovered ? 9 : 7}
-                  fontWeight={isHovered ? 700 : 600}
+                  fontSize={isHovered ? 8 : 6}
+                  fontWeight={600}
                 >
                   {kommun?.name || slug}
                 </text>
-
-                {/* Company count */}
                 {kommun && (
                   <text
                     x={labelX}
-                    y={labelY + 5}
+                    y={labelY + 4}
                     textAnchor="middle"
-                    dominantBaseline="middle"
                     className="pointer-events-none select-none"
                     fill="#64748B"
-                    fontSize={6}
+                    fontSize={5}
                     fontFamily="ui-monospace, monospace"
                   >
                     {kommun.totalCompanies.toLocaleString("sv-SE")}
@@ -212,62 +145,44 @@ export default function JonkopingMap({ kommuner }: JonkopingMapProps) {
         {/* Hover tooltip */}
         {hoveredKommun && kommunMap[hoveredKommun] && (
           <motion.div
-            className="absolute bottom-4 left-1/2 -translate-x-1/2 glass-card p-3 min-w-[180px] z-10"
-            initial={{ opacity: 0, y: 8 }}
+            className="absolute bottom-3 left-1/2 -translate-x-1/2 glass-card p-3 min-w-[160px] z-10"
+            initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.1 }}
           >
-            <p className="font-bold text-charcoal text-sm">
-              {kommunMap[hoveredKommun].name}
-            </p>
-            <div className="mt-1.5 space-y-1 text-xs">
-              <div className="flex justify-between gap-3">
+            <p className="font-bold text-charcoal text-sm">{kommunMap[hoveredKommun].name}</p>
+            <div className="mt-1 space-y-0.5 text-xs">
+              <div className="flex justify-between">
                 <span className="text-medium-gray">Företag:</span>
-                <span className="font-semibold text-charcoal">
-                  {kommunMap[hoveredKommun].totalCompanies.toLocaleString("sv-SE")}
-                </span>
+                <span className="font-semibold">{kommunMap[hoveredKommun].totalCompanies.toLocaleString("sv-SE")}</span>
               </div>
-              <div className="flex justify-between gap-3">
+              <div className="flex justify-between">
                 <span className="text-medium-gray">Tillväxt:</span>
-                <span className={`font-semibold ${
-                  kommunMap[hoveredKommun].growthRate >= 0 ? "text-emerald-600" : "text-red-600"
-                }`}>
-                  {kommunMap[hoveredKommun].growthRate >= 0 ? "+" : ""}
-                  {kommunMap[hoveredKommun].growthRate}%
+                <span className={kommunMap[hoveredKommun].growthRate >= 0 ? "text-emerald-600 font-semibold" : "text-red-600 font-semibold"}>
+                  {kommunMap[hoveredKommun].growthRate >= 0 ? "+" : ""}{kommunMap[hoveredKommun].growthRate}%
                 </span>
               </div>
-              <div className="flex justify-between gap-3">
+              <div className="flex justify-between">
                 <span className="text-medium-gray">Per 1000 inv:</span>
-                <span className="font-semibold text-charcoal">
-                  {kommunMap[hoveredKommun].companiesPerCapita}
-                </span>
+                <span className="font-semibold">{kommunMap[hoveredKommun].companiesPerCapita}</span>
               </div>
             </div>
-            <p className="text-[10px] text-sky-600 mt-1.5 text-center">
-              Klicka för dashboard →
-            </p>
           </motion.div>
         )}
 
         {/* Legend */}
-        <div className="mt-4 flex flex-wrap justify-center gap-2 text-[10px]">
+        <div className="mt-3 flex flex-wrap justify-center gap-2 text-[9px]">
           <span className="text-medium-gray font-medium">Ftg/1000 inv:</span>
-          <div className="flex items-center gap-1">
-            <div className="w-2.5 h-2.5 rounded-sm" style={{ backgroundColor: "#BAE6FD" }} />
-            <span className="text-medium-gray">&lt;60</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <div className="w-2.5 h-2.5 rounded-sm" style={{ backgroundColor: "#7DD3FC" }} />
-            <span className="text-medium-gray">60-79</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <div className="w-2.5 h-2.5 rounded-sm" style={{ backgroundColor: "#38BDF8" }} />
-            <span className="text-medium-gray">80-99</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <div className="w-2.5 h-2.5 rounded-sm" style={{ backgroundColor: "#0EA5E9" }} />
-            <span className="text-medium-gray">100+</span>
-          </div>
+          {[
+            { color: "#BAE6FD", label: "<60" },
+            { color: "#7DD3FC", label: "60-79" },
+            { color: "#38BDF8", label: "80-99" },
+            { color: "#0EA5E9", label: "100+" },
+          ].map(({ color, label }) => (
+            <div key={label} className="flex items-center gap-0.5">
+              <div className="w-2 h-2 rounded-sm" style={{ backgroundColor: color }} />
+              <span className="text-medium-gray">{label}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>
