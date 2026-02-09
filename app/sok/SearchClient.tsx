@@ -9,7 +9,6 @@ import {
   SearchFilters,
   Company,
 } from "@/lib/company-database";
-import { SNI_CATEGORIES } from "@/lib/types";
 
 interface SearchClientProps {
   industries: Array<{ sniCode: string; name: string; count: number }>;
